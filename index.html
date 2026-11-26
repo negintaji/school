@@ -1,0 +1,977 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SchoolHub | مدرسه هوشمند</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Persian Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: #fffaff;
+            color: #37304b;
+        }
+
+        /* =========================
+           HEADER & HERO
+        ========================= */
+
+        .top-area {
+            position: relative;
+            min-height: 690px;
+            overflow: hidden;
+
+            background-image: url("assets/images/hero-background.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            width: 96%;
+            max-width: 1400px;
+            margin: 18px auto 0;
+            padding: 14px 28px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: #101a4b;
+            border-radius: 60px;
+
+            position: relative;
+            z-index: 5;
+
+            box-shadow: 0 8px 25px #101a4b22;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            color: white;
+            font-size: 25px;
+            font-weight: 900;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #ed7cae;
+        }
+
+        .logo-icon {
+            width: 43px;
+            height: 43px;
+            border-radius: 14px;
+
+            background: #f7a9cb;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            color: #e6e3f1;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #f28ab9;
+        }
+
+        .nav-links a.active {
+            border-bottom: 2px solid #f28ab9;
+            padding-bottom: 8px;
+        }
+
+        .nav-login {
+            text-decoration: none;
+            color: #51416f;
+            background: #fff8fc;
+
+            padding: 12px 23px;
+            border-radius: 30px;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            transition: .3s;
+        }
+
+        .nav-login:hover {
+            background: #f8d8e8;
+            transform: translateY(-3px);
+        }
+
+        /* HERO */
+
+        .hero {
+            width: 90%;
+            max-width: 1250px;
+            min-height: 500px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 30px;
+
+            direction: ltr;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            direction: rtl;
+            text-align: right;
+            padding: 35px 0;
+        }
+
+        .hero-title {
+            color: #d77a9f;
+            font-size: clamp(36px, 4vw, 53px);
+            font-weight: 900;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .hero-title span {
+            color: #d77a9f;
+        }
+
+        .hero-description {
+            color: #514b60;
+            font-size: 15px;
+            line-height: 2.4;
+            margin-bottom: 28px;
+        }
+
+        .main-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+
+            padding: 13px 29px;
+            border-radius: 30px;
+
+            background: #e98bb8;
+            color: white;
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            box-shadow: 0 9px 20px #e98bb844;
+            transition: .3s;
+        }
+
+        .main-button:hover {
+            background: #dc70a4;
+            transform: translateY(-4px);
+        }
+
+        .hero-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .hero-strip span {
+            color: #625b70;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .hero-strip i {
+            color: #a98bd4;
+            margin-left: 6px;
+        }
+
+        .hero-image-area {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 450px;
+        }
+
+        .graduation-image {
+            width: 100%;
+            max-width: 540px;
+            height: auto;
+            object-fit: contain;
+            position: relative;
+            z-index: 2;
+        }
+
+        .decoration {
+            position: absolute;
+            color: #e98bb8;
+            font-size: 30px;
+        }
+
+        .decoration.one {
+            top: 45px;
+            right: 50px;
+        }
+
+        .decoration.two {
+            bottom: 55px;
+            left: 35px;
+            color: #a98bd4;
+        }
+
+        /* =========================
+           ROLE PANELS
+        ========================= */
+
+        .panels-section {
+            padding: 55px 5% 85px;
+            background: #fffaff;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            color: #51416f;
+            font-size: 30px;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+
+        .section-heading h2 span {
+            color: #e77eae;
+        }
+
+        .section-heading p {
+            color: #8a8095;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .panels-container {
+            width: 100%;
+            max-width: 1250px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .panel-card {
+            height: 310px;
+            min-height: 310px;
+
+            position: relative;
+            overflow: hidden;
+
+            border-radius: 28px;
+            padding: 22px 18px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto 1fr;
+
+            align-items: center;
+            text-align: right;
+
+            text-decoration: none;
+            color: #51416f;
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            box-shadow: 0 12px 35px #59436d12;
+            transition: .35s;
+        }
+
+        .panel-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 40px #59436d22;
+        }
+
+        /* PANEL BACKGROUNDS */
+
+        .admin-card {
+            background-image: url("assets/images/admin-bg.png");
+        }
+
+        .student-card {
+            background-image: url("assets/images/student-bg.png");
+        }
+
+        .parent-card {
+            background-image: url("assets/images/parent-bg.png");
+        }
+
+        /* PANEL ICON */
+
+        .panel-icon {
+            grid-column: 1;
+            grid-row: 1;
+
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #ffffffc9;
+            color: #a17bc7;
+            font-size: 19px;
+
+            margin: 0 0 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* PANEL TITLE */
+
+        .panel-card h3 {
+            grid-column: 1;
+            grid-row: 2;
+
+            font-size: 17px;
+            font-weight: 900;
+            margin-bottom: 8px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        /* PANEL DESCRIPTION */
+
+        .panel-card p {
+            grid-column: 1;
+            grid-row: 3;
+
+            font-size: 12px;
+            line-height: 2;
+            color: #766b83;
+
+            max-width: 190px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        /* PANEL BUTTON */
+
+        .panel-button {
+            grid-column: 1;
+            grid-row: 4;
+
+            justify-self: start;
+            align-self: start;
+
+            margin-top: 13px;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 9px 19px;
+            border-radius: 25px;
+
+            background: #ffffffdf;
+            color: #8f70b6;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            position: relative;
+            z-index: 2;
+            transition: .3s;
+        }
+
+        .panel-card:hover .panel-button {
+            background: #a98bd4;
+            color: white;
+        }
+
+        /* PANEL CHARACTERS */
+
+        .panel-character {
+            grid-column: 2;
+            grid-row: 1 / 5;
+
+            width: 100%;
+            height: 260px;
+
+            object-fit: contain;
+            object-position: center bottom;
+
+            margin: 0;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .admin-card .panel-character {
+            width: 100%;
+        }
+
+        .student-card .panel-character {
+            width: 100%;
+        }
+
+        .parent-card .panel-character {
+            width: 100%;
+        }
+
+        /* =========================
+           ABOUT SECTION
+        ========================= */
+
+        .about-section {
+            padding: 65px 20px;
+            text-align: center;
+
+            background: #f8f1ff;
+        }
+
+        .about-section h3 {
+            color: #55446f;
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 18px;
+        }
+
+        .about-section h3 i {
+            color: #f18ab8;
+            margin-left: 8px;
+        }
+
+        .about-section p {
+            max-width: 700px;
+            margin: auto;
+
+            color: #81758e;
+            font-size: 14px;
+            line-height: 2.4;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            background: #514365;
+            color: white;
+            padding: 45px 20px 25px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 25px;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo span {
+            color: #f3a0c6;
+        }
+
+        .footer-slogan {
+            color: #e5d9f0;
+            font-size: 13px;
+            margin-bottom: 23px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .social-links a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            background: #ffffff20;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .social-links a:hover {
+            background: #e98bb8;
+            transform: translateY(-4px);
+        }
+
+        .copyright {
+            border-top: 1px solid #ffffff20;
+            padding-top: 20px;
+            color: #d5c9e0;
+            font-size: 11px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .navbar {
+                width: 92%;
+                padding: 13px 20px;
+            }
+
+            .nav-links {
+                gap: 17px;
+            }
+
+            .hero {
+                width: 92%;
+                gap: 10px;
+            }
+
+            .hero-title {
+                font-size: 38px;
+            }
+
+            .panels-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+        }
+
+        @media (max-width: 650px) {
+
+            .navbar {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 18px;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 17px;
+            }
+
+            .nav-login {
+                display: none;
+            }
+
+            .top-area {
+                background-position: center;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 25px;
+            }
+
+            .hero-text {
+                padding-bottom: 0;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 35px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .hero-strip {
+                justify-content: center;
+                gap: 13px;
+            }
+
+            .hero-image-area {
+                min-height: 300px;
+            }
+
+            .graduation-image {
+                max-width: 390px;
+            }
+
+            .panels-section {
+                padding: 55px 6%;
+            }
+
+            .section-heading h2 {
+                font-size: 24px;
+            }
+
+            .panels-container {
+                grid-template-columns: 1fr;
+                max-width: 390px;
+            }
+
+            .panel-card {
+                height: 290px;
+                min-height: 290px;
+                padding: 18px 14px;
+            }
+
+            .panel-character {
+                height: 235px;
+            }
+
+            .panel-card h3 {
+                font-size: 15px;
+            }
+
+            .panel-card p {
+                font-size: 11px;
+            }
+
+            .about-section h3 {
+                font-size: 20px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="top-area" id="home">
+
+        <!-- NAVBAR -->
+
+        <nav class="navbar">
+
+            <a href="#home" class="logo">
+
+                <div class="logo-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+                    School<span>Hub</span>
+                </div>
+
+            </a>
+
+            <div class="nav-links">
+
+                <a href="#home" class="active">خانه</a>
+                <a href="#panels">امکانات</a>
+                <a href="#about">درباره ما</a>
+                <a href="#contact">تماس با ما</a>
+
+            </div>
+
+            <a href="#panels" class="nav-login">
+
+                <i class="fa-solid fa-chevron-right ml-2"></i>
+                ورود به سامانه
+
+            </a>
+
+        </nav>
+
+
+        <!-- HERO -->
+
+        <main class="hero">
+
+            <!-- HERO TEXT -->
+
+            <div class="hero-text">
+
+                <h1 class="hero-title">
+                    <span>خوش آمدید ♡</span>
+                </h1>
+
+                <p class="hero-description">
+                    همه چیز برای یک تجربه آموزشی بهتر آماده است.
+                    <br>
+                    با هم یاد می‌گیریم، رشد می‌کنیم و آینده‌ای روشن می‌سازیم.
+                </p>
+
+                <a href="#panels" class="main-button">
+
+                    شروع کاوش
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                </a>
+
+                <div class="hero-strip">
+
+                    <span>
+                        <i class="fa-solid fa-star"></i>
+                        آینده روشن
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-users"></i>
+                        ارتباط آسان
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        یادگیری هوشمند
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO IMAGE -->
+
+            <div class="hero-image-area">
+
+                <span class="decoration one">♡</span>
+                <span class="decoration two">✦</span>
+
+                <img
+                    src="assets/images/file_000000009f3482469fbbb64b61dd2175.png"
+                    alt="دختر و پسر فارغ التحصیل"
+                    class="graduation-image"
+                >
+
+            </div>
+
+        </main>
+
+    </header>
+
+
+    <!-- =========================
+         ROLE PANELS
+    ========================= -->
+
+    <section class="panels-section" id="panels">
+
+        <div class="section-heading">
+
+            <h2>
+                از کجا می‌خواهید وارد شوید؟
+            </h2>
+
+            <p>
+                لطفاً پنل مورد نظر خود را انتخاب کنید.
+            </p>
+
+        </div>
+
+
+        <div class="panels-container">
+
+
+            <!-- ADMIN PANEL -->
+
+            <a href="admin/dashboard.html"
+               class="panel-card admin-card">
+
+                <div class="panel-icon">
+                    <i class="fa-solid fa-school"></i>
+                </div>
+
+                <h3>پنل مدیریت مدرسه</h3>
+
+                <p>
+                    مدیریت کامل مدرسه و کلاس‌ها
+                </p>
+
+                <span class="panel-button">
+                    ورود به پنل
+                    <i class="fa-solid fa-arrow-left"></i>
+                </span>
+
+                <img
+                    src="assets/images/Teacher Cutouts.png"
+                    alt="مدیریت مدرسه"
+                    class="panel-character"
+                >
+
+            </a>
+
+
+            <!-- STUDENT PANEL -->
+
+            <a href="student/dashboard.html"
+               class="panel-card student-card">
+
+                <div class="panel-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <h3>پنل دانش‌آموز</h3>
+
+                <p>
+                    مشاهده نمرات، تکالیف و برنامه درسی
+                </p>
+
+                <span class="panel-button">
+                    ورود به پنل
+                    <i class="fa-solid fa-arrow-left"></i>
+                </span>
+
+                <img
+                    src="assets/images/Student.png"
+                    alt="دانش‌آموز"
+                    class="panel-character"
+                >
+
+            </a>
+
+
+            <!-- PARENT PANEL -->
+
+            <a href="parent/dashboard.html"
+               class="panel-card parent-card">
+
+                <div class="panel-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <h3>پنل اولیا</h3>
+
+                <p>
+                    پیگیری وضعیت تحصیلی و مشاهده گزارش‌ها
+                </p>
+
+                <span class="panel-button">
+                    ورود به پنل
+                    <i class="fa-solid fa-arrow-left"></i>
+                </span>
+
+                <img
+                    src="assets/images/Family, Student, and Teacher Trio.png"
+                    alt="خانواده و مدرسه"
+                    class="panel-character"
+                >
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section class="about-section" id="about">
+
+        <h3>
+            <i class="fa-solid fa-heart"></i>
+            یک مدرسه، یک خانواده، یک آینده روشن
+        </h3>
+
+        <p>
+            SchoolHub با هدف ایجاد ارتباطی آسان میان مدرسه،
+            دانش‌آموزان و خانواده‌ها طراحی شده است.
+            یادگیری، پیشرفت و ارتباط بهتر در یک فضای هوشمند.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="footer" id="contact">
+
+        <div class="footer-logo">
+
+            <i class="fa-solid fa-graduation-cap" style="color:#F3A0C6"></i>
+
+            School<span>Hub</span>
+
+        </div>
+
+        <div class="footer-slogan">
+            ♡ با هم، برای فردایی روشن‌تر
+<br>Negin Taji | Reyhaneh Ansary | Taha Tayeb | Kasra Parvizy 
+        </div>
+
+        <div class="social-links">
+
+            <a href="#" aria-label="Telegram">
+                <i class="fa-brands fa-telegram"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="#" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 SchoolHub | تمامی حقوق محفوظ است.
+        </div>
+
+    </footer>
+
+</body>
+</html>
