@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>پنل معاونین | SchoolHub</title>
+<!-- همان فونتی که بقیه‌ی صفحات پروژه می‌گیرند؛ اگر نبود، fallback کار می‌کند -->
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="panel-moavenin.css">
+</head>
+<body>
+<div class="shell">
+
+<aside class="side">
+  <a class="brand" href="#dash"><b aria-hidden="true">🎓</b><span>School<em>Hub</em></span></a>
+  <nav class="nav" aria-label="بخش‌های پنل">
+    <a href="#dash"><i aria-hidden="true">▦</i>داشبورد</a>
+    <a href="#att"><i aria-hidden="true">✓</i>حضور و غیاب</a>
+    <a href="#plan"><i aria-hidden="true">▤</i>برنامه‌ی هفتگی</a>
+    <a href="#disc"><i aria-hidden="true">⚑</i>انضباطی</a>
+    <a href="#stu"><i aria-hidden="true">☺</i>دانش‌آموزان</a>
+    <a href="#tch"><i aria-hidden="true">⇄</i>معلمان و جایگزین</a>
+    <a href="#ann"><i aria-hidden="true">✦</i>اطلاعیه و جلسات</a>
+    <a href="#rep"><i aria-hidden="true">▲</i>گزارش‌های دوره‌ای</a>
+    <a href="#par"><i aria-hidden="true">✉</i>پیام‌های اولیا</a>
+  </nav>
+  <div class="me"><strong>سمیرا ایزدی</strong><small>معاون آموزشی</small><a href="login.html">خروج از پنل</a></div>
+</aside>
+
+<main class="page">
+  <header class="top">
+    <div><h1>پنل معاونین مدرسه</h1><p>چهارشنبه، ۴ آذر ۱۴۰۵</p></div>
+    <label><span aria-hidden="true">⌕</span><input type="search" placeholder="جستجو در پنل..." aria-label="جستجو در پنل"></label>
+  </header>
+
+  <!-- ۱. داشبورد -->
+  <section class="sec" id="dash" aria-label="داشبورد امروز">
+    <div class="board b-dash">
+      <div class="card hello" style="grid-area:hi">
+        <h2>صبح بخیر، خانم ایزدی</h2>
+        <p>امروز ۳۴ غایب و ۶ کار معوق دارید. جلسه‌ی شورای معلمان ساعت ۱۴:۰۰ است.</p>
+      </div>
+      <div class="kpi" style="grid-area:kpi">
+        <div class="k sky"><b>۴۸۲</b><span>حاضر از ۵۱۶ دانش‌آموز</span></div>
+        <div class="k pink"><b>۳۴</b><span>غایب امروز</span></div>
+        <div class="k lilac"><b>۱۲</b><span>تأخیر صبح</span></div>
+        <div class="k plain"><b>۶</b><span>کار معوق</span></div>
+      </div>
+      <div class="card" style="grid-area:att">
+        <h2><i aria-hidden="true">✓</i>حضور امروز به تفکیک پایه</h2>
+        <div class="row"><span>هفتم</span><span>۹۵٪</span></div><div class="bar"><i style="--v:95%"></i></div>
+        <div class="row"><span>هشتم</span><span>۹۲٪</span></div><div class="bar"><i style="--v:92%"></i></div>
+        <div class="row"><span>نهم</span><span>۹۰٪</span></div><div class="bar"><i style="--v:90%"></i></div>
+      </div>
+      <div class="card" style="grid-area:abs">
+        <h2><i aria-hidden="true">☺</i>غایبین نیازمند پیگیری</h2>
+        <ul class="list">
+          <li><span class="av p">ک</span><div><b>کیان رحیمی</b><small>هشتم ۲ · بدون اطلاع</small></div><span class="pill wait">تماس</span></li>
+          <li><span class="av">آ</span><div><b>آرینا صالحی</b><small>نهم ۱ · روز سوم</small></div><span class="pill wait">تماس</span></li>
+          <li><span class="av s">م</span><div><b>مهسا طاهری</b><small>هفتم ۱ · بیماری</small></div><span class="pill done">اطلاع‌داده</span></li>
+        </ul>
+      </div>
+      <div class="card" style="grid-area:todo">
+        <h2><i aria-hidden="true">⚑</i>کارهای معوق</h2>
+        <ul class="list">
+          <li><div><b>تأیید جایگزین ساعت دوم فردا</b><small>سه‌شنبه‌ی گذشته ثبت شده</small></div><span class="pill wait">۲ روز تأخیر</span></li>
+          <li><div><b>امضای گزارش انضباطی هشتم ۲</b><small>منتظر امضای معاون</small></div><span class="pill wait">معوق</span></li>
+          <li><div><b>پاسخ به نامه‌ی اولیای هفتم ۳</b><small>درخواست جابه‌جایی کلاس</small></div><span class="pill late">امروز</span></li>
+        </ul>
+      </div>
+      <div class="card" style="grid-area:ann">
+        <h2><i aria-hidden="true">✦</i>اطلاعیه‌ها</h2>
+        <ul class="list">
+          <li><div><b>آزمون‌های میان‌ترم</b><small>شروع از ۱۵ آذر</small></div></li>
+          <li><div><b>اردوی کتابخانه‌ی ملی</b><small>ثبت‌نام تا ۱۰ آذر</small></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ۲. حضور و غیاب -->
+  <section class="sec" id="att" aria-label="حضور و غیاب کلاس‌ها">
+    <div class="board b-att">
+      <div class="card" style="grid-area:tbl">
+        <h2><i aria-hidden="true">✓</i>حضور و غیاب کلاس‌ها · امروز</h2>
+        <div class="wrap"><table>
+          <thead><tr><th>کلاس</th><th>معلم زنگ اول</th><th>حاضر</th><th>غایب</th><th>وضعیت</th></tr></thead>
+          <tbody>
+            <tr><td>هفتم ۱</td><td>خانم فروغی</td><td>۲۹ از ۳۱</td><td>۲</td><td><span class="pill done">ثبت شد</span></td></tr>
+            <tr><td>هفتم ۲</td><td>خانم عمرایی</td><td>۳۰ از ۳۲</td><td>۲</td><td><span class="pill done">ثبت شد</span></td></tr>
+            <tr><td>هشتم ۱</td><td>آقای پرویزی</td><td>۲۶ از ۳۰</td><td>۴</td><td><span class="pill wait">در انتظار</span></td></tr>
+            <tr><td>هشتم ۲</td><td>خانم عنایتی</td><td>۲۷ از ۳۱</td><td>۴</td><td><span class="pill done">ثبت شد</span></td></tr>
+            <tr><td>نهم ۱</td><td>خانم رحیمی</td><td>۲۵ از ۳۰</td><td>۵</td><td><span class="pill late">تأییدنشده</span></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="card" style="grid-area:side">
+        <h2><i aria-hidden="true">⚑</i>خلاصه</h2>
+        <div class="row"><span>ثبت‌شده</span><span>۳ از ۵ کلاس</span></div><div class="bar"><i style="--v:60%"></i></div>
+        <p><small>هشتم ۱ هنوز حضور و غیاب را ثبت نکرده است. یادآوری برای معلم ارسال شود.</small></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ۳. برنامه‌ی هفتگی -->
+  <section class="sec" id="plan" aria-label="برنامه‌ی هفتگی">
+    <div class="board b-plan">
+      <div class="card">
+        <h2><i aria-hidden="true">▤</i>برنامه‌ی هفتگی هفتم ۱</h2>
+        <div class="wrap"><table class="tt">
+          <thead><tr><th>زنگ</th><th>شنبه</th><th>یکشنبه</th><th>دوشنبه</th><th>سه‌شنبه</th><th>چهارشنبه (امروز)</th></tr></thead>
+          <tbody>
+            <tr><td>اول · ۰۸:۰۰</td>
+              <td><span class="c a">ریاضی<small>خانم فروغی</small></span></td>
+              <td><span class="c a">مطالعات<small>خانم کاظمی</small></span></td>
+              <td><span class="c a">علوم<small>خانم عمرایی</small></span></td>
+              <td><span class="c a">ریاضی<small>خانم فروغی</small></span></td>
+              <td class="now"><span class="c a">فارسی<small>خانم عنایتی</small></span></td></tr>
+            <tr><td>دوم · ۰۹:۱۵</td>
+              <td><span class="c b">علوم<small>خانم عمرایی</small></span></td>
+              <td><span class="c b">ریاضی<small>خانم فروغی</small></span></td>
+              <td><span class="c b">هوش مصنوعی<small>خانم بهرامی</small></span></td>
+              <td><span class="c b">تفکر<small>خانم صالحی</small></span></td>
+              <td class="now"><span class="c b">مطالعات<small>خانم کاظمی</small></span></td></tr>
+            <tr><td>سوم · ۱۰:۴۵</td>
+              <td><span class="c l">فارسی<small>خانم عنایتی</small></span></td>
+              <td><span class="c l">عربی<small>خانم سلطانی</small></span></td>
+              <td><span class="c l">فارسی<small>خانم عنایتی</small></span></td>
+              <td><span class="c l">فرهنگ و هنر<small>خانم نوری</small></span></td>
+              <td class="now"><span class="c l">تربیت بدنی<small>خانم کریمی</small></span></td></tr>
+            <tr><td>چهارم · ۱۲:۰۰</td>
+              <td><span class="c a">انگلیسی<small>خانم رحیمی</small></span></td>
+              <td><span class="c a">کار و فناوری<small>خانم نظری</small></span></td>
+              <td><span class="c a">پیام‌های آسمان<small>خانم موسوی</small></span></td>
+              <td><span class="c a">علوم<small>خانم عمرایی</small></span></td>
+              <td class="now"><span class="c a">قرآن<small>خانم جلالی</small></span></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ۴. انضباطی -->
+  <section class="sec" id="disc" aria-label="موارد انضباطی">
+    <div class="board b-disc">
+      <div class="card" style="grid-area:sum">
+        <h2><i aria-hidden="true">⚑</i>خلاصه‌ی آذر</h2>
+        <div class="kpi">
+          <div class="k pink"><b>۵</b><span>پرونده‌ی باز</span></div>
+          <div class="k sky"><b>۱۱</b><span>پرونده‌ی بسته‌شده</span></div>
+          <div class="k lilac"><b>۸</b><span>گزارش رفتار مثبت</span></div>
+        </div>
+      </div>
+      <div class="card" style="grid-area:list">
+        <h2><i aria-hidden="true">☰</i>موارد اخیر</h2>
+        <ul class="list">
+          <li><div><b>درگیری لفظی در حیاط</b><small>هشتم ۲ · گزارش ناظم، ۳ آذر</small></div><span class="pill wait">پیگیری با اولیا</span></li>
+          <li><div><b>تأخیر مکرر (۴ بار در آذر)</b><small>نهم ۱ · گزارش دبیر</small></div><span class="pill late">هشدار شفاهی</span></li>
+          <li><div><b>کمک به هم‌کلاسی در آزمایشگاه</b><small>هفتم ۳ · گزارش خانم عمرایی</small></div><span class="pill done">رفتار مثبت</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ۵. دانش‌آموزان -->
+  <section class="sec" id="stu" aria-label="فهرست دانش‌آموزان">
+    <div class="board b-stu">
+      <div>
+        <div class="filters" role="group" aria-label="فیلتر دانش‌آموزان">
+          <input type="checkbox" id="f-abs"><label class="chip" for="f-abs">فقط غایب امروز</label>
+          <input type="checkbox" id="f-case"><label class="chip" for="f-case">دارای پرونده‌ی انضباطی</label>
+        </div>
+        <details class="grp" open>
+          <summary>هفتم ۱<small>۳۱ نفر</small></summary>
+          <ul class="list">
+            <li class="stu abs"><span class="av s">م</span><div><b>مهسا طاهری</b><small>کد ۱۴۰۵۰۱۲</small></div><span class="pill wait">غایب</span></li>
+            <li class="stu"><span class="av">ه</span><div><b>هلیا نوری</b><small>کد ۱۴۰۵۰۱۳</small></div><span class="pill done">حاضر</span></li>
+          </ul>
+        </details>
+        <details class="grp">
+          <summary>هشتم ۲<small>۳۱ نفر</small></summary>
+          <ul class="list">
+            <li class="stu abs case"><span class="av p">ک</span><div><b>کیان رحیمی</b><small>کد ۱۴۰۴۰۸۸</small></div><span class="pill wait">غایب · پرونده</span></li>
+            <li class="stu case"><span class="av">پ</span><div><b>پارسا کاظمی</b><small>کد ۱۴۰۴۰۹۱</small></div><span class="pill late">تأخیر</span></li>
+          </ul>
+        </details>
+        <details class="grp">
+          <summary>نهم ۱<small>۳۰ نفر</small></summary>
+          <ul class="list">
+            <li class="stu abs case"><span class="av">آ</span><div><b>آرینا صالحی</b><small>کد ۱۴۰۳۰۴۴</small></div><span class="pill wait">غایب · پرونده</span></li>
+            <li class="stu"><span class="av s">س</span><div><b>سپهر جلالی</b><small>کد ۱۴۰۳۰۴۹</small></div><span class="pill done">حاضر</span></li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ۶. معلمان -->
+  <section class="sec" id="tch" aria-label="معلمان و جایگزینی ساعات">
+    <div class="board b-tch">
+      <div class="card" style="grid-area:sub">
+        <h2><i aria-hidden="true">⇄</i>جایگزینی ساعات امروز</h2>
+        <div class="wrap"><table>
+          <thead><tr><th>زنگ</th><th>کلاس</th><th>معلم غایب</th><th>جایگزین</th><th>وضعیت</th></tr></thead>
+          <tbody>
+            <tr><td>دوم</td><td>هشتم ۱</td><td>آقای پرویزی</td><td>خانم فروغی</td><td><span class="pill done">تأیید شد</span></td></tr>
+            <tr><td>سوم</td><td>هشتم ۱</td><td>آقای پرویزی</td><td>—</td><td><span class="pill wait">بدون جایگزین</span></td></tr>
+            <tr><td>چهارم</td><td>نهم ۲</td><td>خانم نظری</td><td>خانم موسوی</td><td><span class="pill late">در انتظار</span></td></tr>
+          </tbody>
+        </table></div>
+        <p style="margin-top:14px"><a class="btn" href="#tch">ثبت جایگزین جدید</a></p>
+      </div>
+      <div class="card" style="grid-area:load">
+        <h2><i aria-hidden="true">☰</i>ساعت‌های این هفته</h2>
+        <div class="row"><span>خانم فروغی · ریاضی</span><span>۱۸ ساعت</span></div><div class="bar"><i style="--v:90%"></i></div>
+        <div class="row"><span>خانم عمرایی · علوم</span><span>۱۶ ساعت</span></div><div class="bar"><i style="--v:80%"></i></div>
+        <div class="row"><span>خانم عنایتی · فارسی</span><span>۱۴ ساعت</span></div><div class="bar"><i style="--v:70%"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ۷. اطلاعیه و جلسات -->
+  <section class="sec" id="ann" aria-label="اطلاعیه‌ها و جلسات">
+    <div class="board b-ann">
+      <div class="card" style="grid-area:news">
+        <h2><i aria-hidden="true">✦</i>اطلاعیه‌ها</h2>
+        <ul class="list">
+          <li><div><b>برنامه‌ی آزمون‌های میان‌ترم</b><small>از ۱۵ آذر؛ برنامه‌ی هر درس در جدول نهایی</small></div><time>۲ آذر</time></li>
+          <li><div><b>اردوی علمی کتابخانه‌ی ملی</b><small>ثبت‌نام تا ۱۰ آذر انجام می‌شود</small></div><time>۳۰ آبان</time></li>
+          <li><div><b>تغییر ساعت زنگ آخر پنجشنبه‌ها</b><small>با شروع ماه جدید اعمال می‌شود</small></div><time>۲۸ آبان</time></li>
+        </ul>
+      </div>
+      <div class="card" style="grid-area:meet">
+        <h2><i aria-hidden="true">☺</i>جلسات پیش رو</h2>
+        <ul class="list">
+          <li><span class="av p">۱۴</span><div><b>شورای معلمان</b><small>امروز · اتاق جلسات</small></div></li>
+          <li><span class="av">۱۰</span><div><b>جلسه‌ی اولیای نهم</b><small>شنبه · سالن اجتماعات</small></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ۸. گزارش‌ها -->
+  <section class="sec" id="rep" aria-label="گزارش‌های دوره‌ای">
+    <div class="board b-rep">
+      <div class="card" style="grid-area:chart">
+        <h2><i aria-hidden="true">▲</i>میانگین حضور ماهانه</h2>
+        <div class="chart" role="img" aria-label="حضور ماهانه: مهر ۹۴٪، آبان ۹۲٪، آذر تا امروز ۹۳٪">
+          <div class="col"><em>۹۴٪</em><i style="--v:94%"></i></div>
+          <div class="col"><em>۹۲٪</em><i style="--v:92%"></i></div>
+          <div class="col now"><em>۹۳٪</em><i style="--v:93%"></i></div>
+        </div>
+        <div class="months"><span>مهر</span><span>آبان</span><span>آذر</span></div>
+      </div>
+      <div class="card" style="grid-area:files">
+        <h2><i aria-hidden="true">☰</i>گزارش‌های آماده</h2>
+        <ul class="list">
+          <li><div><b>حضور و غیاب ماهانه‌ی آبان</b><small>همه‌ی پایه‌ها</small></div><span class="pill done">نهایی</span></li>
+          <li><div><b>گزارش انضباطی دوره‌ی اول</b><small>تا ۳ آذر</small></div><span class="pill late">پیش‌نویس</span></li>
+          <li><div><b>کارنامه‌ی میان‌ترم</b><small>پس از ثبت همه‌ی نمرات</small></div><span class="pill wait">منتظر نمرات</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ۹. اولیا -->
+  <section class="sec" id="par" aria-label="پیام‌ها و درخواست‌های اولیا">
+    <div class="board b-par">
+      <div class="card" style="grid-area:msg">
+        <h2><i aria-hidden="true">✉</i>پیام‌ها</h2>
+        <ul class="list">
+          <li><span class="av p">ط</span><div><b>آقای طاهری · پدر مهسا</b><small>بیماری دخترم تا پنجشنبه ادامه دارد.</small></div><time>۱۰ دقیقه پیش</time></li>
+          <li><span class="av">ر</span><div><b>خانم رحیمی · مادر کیان</b><small>می‌خواهم درباره‌ی غیبت‌های اخیر صحبت کنم.</small></div><time>۲ ساعت پیش</time></li>
+          <li><span class="av s">ص</span><div><b>آقای صالحی · پدر آرینا</b><small>مدارک پزشکی را فردا تحویل می‌دهم.</small></div><time>دیروز</time></li>
+        </ul>
+      </div>
+      <div class="card" style="grid-area:req">
+        <h2><i aria-hidden="true">⚑</i>درخواست‌ها</h2>
+        <ul class="list">
+          <li><div><b>جابه‌جایی به هفتم ۲</b><small>اولیای هفتم ۳</small></div><span class="pill wait">در بررسی</span></li>
+          <li><div><b>مرخصی ساعتی</b><small>پارسا کاظمی</small></div><span class="pill done">تأیید شد</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <p style="text-align:center;margin-top:24px"><small>© ۲۰۲۶ SchoolHub · پنل معاونین</small></p>
+</main>
+</div>
+</body>
+</html>
