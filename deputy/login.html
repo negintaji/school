@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ورود معاون | SchoolHub</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="panel-moavenin.css">
+</head>
+<body>
+<main class="gate">
+  <!-- فرم ساده‌ی GET: اگر کد با الگو بخواند، مرورگر پنل را باز می‌کند -->
+  <form action="d_dashboard.html" method="get">
+    <div class="mark" aria-hidden="true">🎓</div>
+    <h1>ورود به پنل معاون</h1>
+    <p>کد پرسنلی خود را وارد کنید.</p>
+
+    <label for="code">کد پرسنلی</label>
+    <input id="code" name="code" type="text" inputmode="numeric" autocomplete="off"
+           required pattern="(12345|۱۲۳۴۵)" placeholder="●●●●●"
+           title="کد پرسنلی نادرست است">
+    <p class="err" role="alert">کد پرسنلی نادرست است. دوباره بررسی کنید.</p>
+
+    <button type="submit">ورود به پنل</button>
+    <a class="back" href="../admin/dashboard.html">بازگشت به انتخاب پنل</a>
+    <p class="hint"><small>نسخه‌ی نمایشی: کد ۱۲۳۴۵</small></p>
+  </form>
+</main>
+</body>
+</html>
