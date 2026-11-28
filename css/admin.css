@@ -1,0 +1,292 @@
+*{
+    box-sizing:border-box;
+    font-family:Vazirmatn,sans-serif
+}
+
+body{
+    margin:0;
+    background:#F8F5FF;
+    color:#101A3A
+}
+
+.navbar{
+    max-width:1150px;
+    margin:20px auto;
+    padding:12px 22px;
+    border-radius:40px;
+    background:linear-gradient(100deg,#101A3A,#253D7A);
+    display:flex;
+    justify-content:space-between;
+    align-items:center
+}
+
+.logo{
+    color:white;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:900
+}
+
+.pink{
+    color:#F45B9A
+}
+
+.home-btn{
+    background:white;
+    color:#101A3A;
+    padding:10px 15px;
+    border-radius:25px;
+    text-decoration:none;
+    font-size:12px
+}
+
+.hero,
+.roles{
+    max-width:1150px;
+    margin:35px auto;
+    padding:10px 20px
+}
+
+.hero h1{
+    font-size:38px
+}
+
+.hero h1 span{
+    color:#F45B9A
+}
+
+.hero p,
+.section-title p{
+    color:#7B829D
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:28px
+}
+
+.role-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px
+}
+
+.role-card{
+    padding:26px;
+    border-radius:25px;
+    text-decoration:none;
+    color:#101A3A;
+    box-shadow:0 10px 25px #253D7618;
+    transition:.2s;
+    position:relative;
+    overflow:hidden;
+    isolation:isolate
+}
+
+.role-card:hover{
+    transform:translateY(-6px)
+}
+
+.manager{
+    background:linear-gradient(145deg,#E9DDFB,#DCEEFF)
+}
+
+.deputy{
+    background:linear-gradient(145deg,#FFD5E8,#F5E8FF)
+}
+
+.teachers{
+    background:linear-gradient(145deg,#DCEEFF,#DDF8F5)
+}
+
+.role-icon{
+    font-size:28px
+}
+
+.role-card h3{
+    font-size:22px
+}
+
+.role-card p{
+    font-size:12px;
+    line-height:2;
+    color:#59627E
+}
+
+.role-button{
+    display:block;
+    text-align:center;
+    background:linear-gradient(100deg,#FF83B7,#ED3691);
+    color:white;
+    border-radius:30px;
+    padding:12px;
+    font-size:12px;
+    font-weight:800
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    color:#8A91A8;
+    font-size:11px
+}
+
+@media(max-width:750px){
+
+    .role-grid{
+        grid-template-columns:1fr
+    }
+
+    .navbar{
+        margin:12px
+    }
+
+    .hero,
+    .roles{
+        margin:15px
+    }
+
+}
+
+.panel-card{
+    position:relative;
+    min-height:360px;
+    padding:30px;
+    border-radius:28px;
+    overflow:hidden;
+    display:block;
+    text-decoration:none;
+    border:2px solid rgba(255,255,255,0.8);
+    box-shadow:0 10px 30px rgba(70,80,150,0.15);
+    transition:0.3s ease
+}
+
+.panel-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px rgba(70,80,150,0.25)
+}
+
+.admin-card{
+    background:linear-gradient(135deg,#e8eaff,#d9e4ff)
+}
+
+.student-card{
+    background:linear-gradient(135deg,#ffe6f5,#ffd6ee)
+}
+
+.parent-card{
+    background:linear-gradient(135deg,#e3f8ff,#d1efff)
+}
+
+.panel-icon{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-left:auto;
+    background:rgba(255,255,255,0.55);
+    color:#172554;
+    font-size:38px;
+    position:relative;
+    z-index:5
+}
+
+.panel-content{
+    position:relative;
+    z-index:5;
+    width:55%;
+    margin-left:auto;
+    text-align:right
+}
+
+.panel-content h3{
+    color:#172554;
+    font-size:27px;
+    font-weight:900;
+    margin:10px 0
+}
+
+.panel-content p{
+    color:#334155;
+    font-size:14px;
+    line-height:2;
+    margin-bottom:25px
+}
+
+.panel-character{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:52%;
+    max-width:260px;
+    height:auto;
+    object-fit:contain;
+    z-index:3;
+    pointer-events:none;
+    transition:transform 0.3s ease
+}
+
+.panel-card:hover .panel-character{
+    transform:translateY(-5px)
+}
+
+.panel-button{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 25px;
+    border-radius:30px;
+    color:white;
+    font-weight:800;
+    position:relative;
+    z-index:10
+}
+
+.admin-card .panel-button{
+    background:#172554
+}
+
+.student-card .panel-button{
+    background:#ec329f
+}
+
+.parent-card .panel-button{
+    background:#159bd3
+}
+
+.role-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    z-index:-2;
+    transition:transform 0.6s ease
+}
+
+.role-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,0.08);
+    z-index:-1
+}
+
+.role-card.manager::before{
+    background-image:url("../assets/images/admin-bg.png")
+}
+
+.role-card.deputy::before{
+    background-image:url("../assets/images/student-bg.png")
+}
+
+.role-card.teachers::before{
+    background-image:url("../assets/images/parent-bg.png")
+}
+
+.role-card:hover::before{
+    transform:scale(1.05)
+}

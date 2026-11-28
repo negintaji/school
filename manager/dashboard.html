@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>داشبورد مدیر | SchoolHub</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Persian Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    >
+
+    <!-- Main Auth / Dashboard CSS -->
+    <link rel="stylesheet" href="../css/auth.css">
+
+</head>
+
+
+<body class="bg-[#F8F5FF] text-[#101A3A]">
+
+
+<div class="min-h-screen flex">
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside
+        class="w-72 min-h-screen bg-[#101A3A] text-white hidden lg:flex flex-col"
+    >
+
+        <!-- Logo -->
+
+        <div class="px-7 py-8">
+
+            <a
+                href="../index.html"
+                class="text-3xl font-black"
+            >
+                School<span class="text-[#F45B9A]">Hub</span>
+            </a>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="flex-1 px-5">
+
+            <a
+                href="dashboard.html"
+                class="flex items-center gap-4 px-5 py-4 rounded-2xl bg-white/10 mb-2"
+            >
+
+                <i class="fa-solid fa-chart-line w-5"></i>
+
+                <span>
+                    داشبورد
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="flex items-center gap-4 px-5 py-4 rounded-2xl hover:bg-white/10 transition mb-2"
+            >
+
+                <i class="fa-solid fa-user-graduate w-5"></i>
+
+                <span>
+                    دانش‌آموزان
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="flex items-center gap-4 px-5 py-4 rounded-2xl hover:bg-white/10 transition mb-2"
+            >
+
+                <i class="fa-solid fa-chalkboard-user w-5"></i>
+
+                <span>
+                    معلمان
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="flex items-center gap-4 px-5 py-4 rounded-2xl hover:bg-white/10 transition mb-2"
+            >
+
+                <i class="fa-solid fa-school w-5"></i>
+
+                <span>
+                    کلاس‌ها
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="flex items-center gap-4 px-5 py-4 rounded-2xl hover:bg-white/10 transition mb-2"
+            >
+
+                <i class="fa-solid fa-book w-5"></i>
+
+                <span>
+                    دروس
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="flex items-center gap-4 px-5 py-4 rounded-2xl hover:bg-white/10 transition mb-2"
+            >
+
+                <i class="fa-solid fa-chart-pie w-5"></i>
+
+                <span>
+                    گزارش‌ها
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="flex items-center gap-4 px-5 py-4 rounded-2xl hover:bg-white/10 transition mb-2"
+            >
+
+                <i class="fa-solid fa-bullhorn w-5"></i>
+
+                <span>
+                    اطلاعیه‌ها
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="flex items-center gap-4 px-5 py-4 rounded-2xl hover:bg-white/10 transition mb-2"
+            >
+
+                <i class="fa-solid fa-gear w-5"></i>
+
+                <span>
+                    تنظیمات
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- Exit -->
+
+        <div class="px-5 pb-7">
+
+            <a
+                href="../admin/dashboard.html"
+                class="flex items-center gap-4 px-5 py-4 rounded-2xl bg-[#F45B9A]/10 text-[#FF8DBD] hover:bg-[#F45B9A]/20 transition"
+            >
+
+                <i class="fa-solid fa-arrow-right-from-bracket w-5"></i>
+
+                <span>
+                    خروج
+                </span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="flex-1 min-w-0">
+
+
+        <!-- Top Header -->
+
+        <header
+            class="bg-white border-b border-[#E8EAF2] px-6 lg:px-10 py-5 flex items-center justify-between"
+        >
+
+            <div>
+
+                <p class="text-sm text-[#7B829D] mb-1">
+                    پنل مدیریت مدرسه
+                </p>
+
+                <h1 class="text-2xl lg:text-3xl font-black">
+                    خوش آمدید، مدیر مدرسه 👋
+                </h1>
+
+            </div>
+
+
+            <div
+                class="hidden sm:flex items-center gap-3"
+            >
+
+                <div
+                    class="w-11 h-11 rounded-full bg-[#E9DDFB] flex items-center justify-center text-[#7651BD]"
+                >
+
+                    <i class="fa-solid fa-user-tie"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- Content -->
+
+        <div class="p-6 lg:p-10">
+
+
+            <!-- ================= STATS ================= -->
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 mb-8">
+
+
+                <!-- Students -->
+
+                <div
+                    class="bg-white rounded-3xl p-6 shadow-sm border border-[#EEF0F6]"
+                >
+
+                    <div class="flex items-center justify-between">
+
+                        <div>
+
+                            <p class="text-sm text-[#7B829D]">
+                                دانش‌آموزان
+                            </p>
+
+                            <h2 class="text-3xl font-black mt-2">
+                                ۵۲۰
+                            </h2>
+
+                        </div>
+
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-[#E9DDFB] text-[#7651BD] flex items-center justify-center text-xl"
+                        >
+
+                            <i class="fa-solid fa-user-graduate"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Teachers -->
+
+                <div
+                    class="bg-white rounded-3xl p-6 shadow-sm border border-[#EEF0F6]"
+                >
+
+                    <div class="flex items-center justify-between">
+
+                        <div>
+
+                            <p class="text-sm text-[#7B829D]">
+                                معلمان
+                            </p>
+
+                            <h2 class="text-3xl font-black mt-2">
+                                ۴۸
+                            </h2>
+
+                        </div>
+
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-[#DCEEFF] text-[#2876B8] flex items-center justify-center text-xl"
+                        >
+
+                            <i class="fa-solid fa-chalkboard-user"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Classes -->
+
+                <div
+                    class="bg-white rounded-3xl p-6 shadow-sm border border-[#EEF0F6]"
+                >
+
+                    <div class="flex items-center justify-between">
+
+                        <div>
+
+                            <p class="text-sm text-[#7B829D]">
+                                کلاس‌ها
+                            </p>
+
+                            <h2 class="text-3xl font-black mt-2">
+                                ۲۴
+                            </h2>
+
+                        </div>
+
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-[#FFD5E8] text-[#E83B91] flex items-center justify-center text-xl"
+                        >
+
+                            <i class="fa-solid fa-school"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Attendance -->
+
+                <div
+                    class="bg-white rounded-3xl p-6 shadow-sm border border-[#EEF0F6]"
+                >
+
+                    <div class="flex items-center justify-between">
+
+                        <div>
+
+                            <p class="text-sm text-[#7B829D]">
+                                حضور و غیاب
+                            </p>
+
+                            <h2 class="text-3xl font-black mt-2">
+                                ۹۴٪
+                            </h2>
+
+                        </div>
+
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-[#DDF8F5] text-[#159B8F] flex items-center justify-center text-xl"
+                        >
+
+                            <i class="fa-solid fa-user-check"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= QUICK ACCESS ================= -->
+
+            <section class="mb-8">
+
+                <div class="flex items-center justify-between mb-5">
+
+                    <div>
+
+                        <h2 class="text-xl font-black">
+                            دسترسی سریع
+                        </h2>
+
+                        <p class="text-sm text-[#7B829D] mt-1">
+                            مدیریت سریع بخش‌های اصلی مدرسه
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+
+
+                    <a
+                        href="#"
+                        class="bg-white rounded-3xl p-6 border border-[#EEF0F6] shadow-sm hover:-translate-y-1 transition"
+                    >
+
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-[#E9DDFB] text-[#7651BD] flex items-center justify-center mb-4"
+                        >
+
+                            <i class="fa-solid fa-user-plus"></i>
+
+                        </div>
+
+                        <h3 class="font-black">
+                            مدیریت دانش‌آموزان
+                        </h3>
+
+                        <p class="text-xs text-[#7B829D] mt-2">
+                            افزودن و مدیریت دانش‌آموزان
+                        </p>
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="bg-white rounded-3xl p-6 border border-[#EEF0F6] shadow-sm hover:-translate-y-1 transition"
+                    >
+
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-[#DCEEFF] text-[#2876B8] flex items-center justify-center mb-4"
+                        >
+
+                            <i class="fa-solid fa-chalkboard-user"></i>
+
+                        </div>
+
+                        <h3 class="font-black">
+                            مدیریت معلمان
+                        </h3>
+
+                        <p class="text-xs text-[#7B829D] mt-2">
+                            مشاهده و مدیریت معلمان
+                        </p>
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="bg-white rounded-3xl p-6 border border-[#EEF0F6] shadow-sm hover:-translate-y-1 transition"
+                    >
+
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-[#FFD5E8] text-[#E83B91] flex items-center justify-center mb-4"
+                        >
+
+                            <i class="fa-solid fa-calendar-days"></i>
+
+                        </div>
+
+                        <h3 class="font-black">
+                            برنامه کلاس‌ها
+                        </h3>
+
+                        <p class="text-xs text-[#7B829D] mt-2">
+                            مدیریت برنامه هفتگی کلاس‌ها
+                        </p>
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="bg-white rounded-3xl p-6 border border-[#EEF0F6] shadow-sm hover:-translate-y-1 transition"
+                    >
+
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-[#DDF8F5] text-[#159B8F] flex items-center justify-center mb-4"
+                        >
+
+                            <i class="fa-solid fa-chart-column"></i>
+
+                        </div>
+
+                        <h3 class="font-black">
+                            گزارش‌ها
+                        </h3>
+
+                        <p class="text-xs text-[#7B829D] mt-2">
+                            مشاهده گزارش‌های مدرسه
+                        </p>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= RECENT ACTIVITIES ================= -->
+
+            <section>
+
+                <div class="bg-white rounded-3xl border border-[#EEF0F6] shadow-sm">
+
+                    <div
+                        class="px-6 py-5 border-b border-[#EEF0F6]"
+                    >
+
+                        <h2 class="text-xl font-black">
+                            فعالیت‌های اخیر
+                        </h2>
+
+                    </div>
+
+
+                    <div class="divide-y divide-[#EEF0F6]">
+
+
+                        <div class="px-6 py-5 flex items-center gap-4">
+
+                            <div
+                                class="w-11 h-11 rounded-2xl bg-[#E9DDFB] text-[#7651BD] flex items-center justify-center"
+                            >
+
+                                <i class="fa-solid fa-user-plus"></i>
+
+                            </div>
+
+                            <div class="flex-1">
+
+                                <p class="font-bold text-sm">
+                                    دانش‌آموز جدید اضافه شد
+                                </p>
+
+                                <p class="text-xs text-[#7B829D] mt-1">
+                                    ثبت دانش‌آموز جدید در سامانه
+                                </p>
+
+                            </div>
+
+                            <span class="text-xs text-[#9BA2B5]">
+                                امروز
+                            </span>
+
+                        </div>
+
+
+                        <div class="px-6 py-5 flex items-center gap-4">
+
+                            <div
+                                class="w-11 h-11 rounded-2xl bg-[#DCEEFF] text-[#2876B8] flex items-center justify-center"
+                            >
+
+                                <i class="fa-solid fa-chalkboard-user"></i>
+
+                            </div>
+
+                            <div class="flex-1">
+
+                                <p class="font-bold text-sm">
+                                    اطلاعات معلم به‌روزرسانی شد
+                                </p>
+
+                                <p class="text-xs text-[#7B829D] mt-1">
+                                    اطلاعات حساب یکی از معلمان تغییر کرد
+                                </p>
+
+                            </div>
+
+                            <span class="text-xs text-[#9BA2B5]">
+                                امروز
+                            </span>
+
+                        </div>
+
+
+                        <div class="px-6 py-5 flex items-center gap-4">
+
+                            <div
+                                class="w-11 h-11 rounded-2xl bg-[#FFD5E8] text-[#E83B91] flex items-center justify-center"
+                            >
+
+                                <i class="fa-solid fa-calendar-check"></i>
+
+                            </div>
+
+                            <div class="flex-1">
+
+                                <p class="font-bold text-sm">
+                                    برنامه هفتگی به‌روزرسانی شد
+                                </p>
+
+                                <p class="text-xs text-[#7B829D] mt-1">
+                                    برنامه کلاس‌ها با موفقیت تغییر کرد
+                                </p>
+
+                            </div>
+
+                            <span class="text-xs text-[#9BA2B5]">
+                                دیروز
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
