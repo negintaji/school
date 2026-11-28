@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>پنل استاد | SchoolHub</title>
+
+    <!-- Persian Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Vazirmatn", sans-serif;
+            background: #f7f4fc;
+            color: #353044;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================
+           MAIN LAYOUT
+        ========================= */
+
+        .page {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* =========================
+           SIDEBAR
+        ========================= */
+
+        .sidebar {
+            width: 260px;
+            min-height: 100vh;
+            background: linear-gradient(
+                180deg,
+                #8d78c9 0%,
+                #7561b5 100%
+            );
+            color: white;
+            padding: 28px 20px;
+            position: fixed;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            box-shadow: -8px 0 25px rgba(90, 70, 130, 0.12);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 38px;
+        }
+
+        .logo-icon {
+            width: 58px;
+            height: 58px;
+            margin: auto;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .logo h2 {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            display: block;
+            margin-top: 5px;
+            font-size: 12px;
+            opacity: 0.85;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .menu a {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding: 14px 16px;
+            border-radius: 14px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .menu a:hover,
+        .menu a.active {
+            background: rgba(255,255,255,0.17);
+        }
+
+        .menu i {
+            width: 22px;
+            text-align: center;
+        }
+
+        .sidebar-bottom {
+            position: absolute;
+            bottom: 25px;
+            right: 20px;
+            left: 20px;
+        }
+
+        .logout {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 15px;
+            border-radius: 13px;
+            background: rgba(255,255,255,0.12);
+            font-size: 13px;
+        }
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .content {
+            width: calc(100% - 260px);
+            margin-right: 260px;
+            padding: 30px 35px;
+        }
+
+        /* =========================
+           TOPBAR
+        ========================= */
+
+        .topbar {
+            background: white;
+            border-radius: 20px;
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 8px 25px rgba(100, 80, 130, 0.07);
+            margin-bottom: 25px;
+        }
+
+        .topbar-title h1 {
+            font-size: 22px;
+            color: #40375a;
+            margin-bottom: 5px;
+        }
+
+        .topbar-title p {
+            color: #8d879b;
+            font-size: 13px;
+        }
+
+        .teacher-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .teacher-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #eee8fa;
+            color: #7762b4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 19px;
+        }
+
+        .teacher-info strong {
+            display: block;
+            font-size: 14px;
+            color: #40375a;
+        }
+
+        .teacher-info span {
+            display: block;
+            font-size: 11px;
+            color: #9992a8;
+            margin-top: 3px;
+        }
+
+        /* =========================
+           WELCOME
+        ========================= */
+
+        .welcome {
+            background: linear-gradient(
+                120deg,
+                #eee8fb 0%,
+                #f9edf7 100%
+            );
+            border-radius: 25px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .welcome-text h2 {
+            color: #51466d;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .welcome-text p {
+            color: #81798f;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .welcome-icon {
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.65);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b76c5;
+            font-size: 42px;
+            margin-left: 20px;
+        }
+
+        /* =========================
+           STATISTICS
+        ========================= */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 19px;
+            padding: 21px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 7px 22px rgba(100, 80, 130, 0.06);
+        }
+
+        .stat-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            background: #eee9fa;
+            color: #7d68ba;
+        }
+
+        .stat-card h3 {
+            font-size: 22px;
+            color: #40375a;
+        }
+
+        .stat-card p {
+            color: #9992a8;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        /* =========================
+           MAIN GRID
+        ========================= */
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 0.9fr;
+            gap: 22px;
+        }
+
+        .box {
+            background: white;
+            border-radius: 21px;
+            padding: 24px;
+            box-shadow: 0 7px 22px rgba(100, 80, 130, 0.06);
+        }
+
+        .box-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .box-header h3 {
+            color: #443b5c;
+            font-size: 16px;
+        }
+
+        .box-header a {
+            color: #806bb9;
+            font-size: 12px;
+        }
+
+        /* =========================
+           TABLE
+        ========================= */
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: right;
+            color: #958ea2;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 12px 8px;
+            border-bottom: 1px solid #eeeaf2;
+        }
+
+        td {
+            padding: 15px 8px;
+            border-bottom: 1px solid #f1eef5;
+            font-size: 12px;
+            color: #5b5467;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 10px;
+        }
+
+        .status.done {
+            background: #e8f6ee;
+            color: #3e9462;
+        }
+
+        .status.waiting {
+            background: #fff3dc;
+            color: #b98534;
+        }
+
+        /* =========================
+           NOTIFICATIONS
+        ========================= */
+
+        .notification {
+            display: flex;
+            gap: 13px;
+            padding: 13px 0;
+            border-bottom: 1px solid #f0edf4;
+        }
+
+        .notification:last-child {
+            border-bottom: none;
+        }
+
+        .notification-icon {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            border-radius: 13px;
+            background: #f0ebfb;
+            color: #806bb9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .notification h4 {
+            font-size: 12px;
+            color: #50485e;
+            margin-bottom: 4px;
+        }
+
+        .notification p {
+            font-size: 10px;
+            color: #9b94a5;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           QUICK ACCESS
+        ========================= */
+
+        .quick-access {
+            margin-top: 22px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .quick-card {
+            border: 1px solid #eeeaf3;
+            border-radius: 16px;
+            padding: 17px;
+            text-align: center;
+            transition: 0.2s;
+        }
+
+        .quick-card:hover {
+            border-color: #cfc2eb;
+            transform: translateY(-2px);
+        }
+
+        .quick-card i {
+            color: #806bb9;
+            font-size: 21px;
+            margin-bottom: 9px;
+        }
+
+        .quick-card span {
+            display: block;
+            color: #61596e;
+            font-size: 11px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 1050px) {
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 800px) {
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                min-height: auto;
+                height: auto;
+            }
+
+            .page {
+                display: block;
+            }
+
+            .content {
+                width: 100%;
+                margin-right: 0;
+                padding: 20px;
+            }
+
+            .sidebar-bottom {
+                position: static;
+                margin-top: 20px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .welcome {
+                padding: 22px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar {
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .teacher-profile {
+                display: none;
+            }
+
+            .welcome-icon {
+                display: none;
+            }
+
+            .quick-access {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-school"></i>
+            </div>
+
+            <h2>SchoolHub</h2>
+
+            <span>سامانه مدیریت مدرسه</span>
+
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="#" class="active">
+                <i class="fa-solid fa-house"></i>
+                <span>داشبورد</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-users"></i>
+                <span>دانش‌آموزان</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-chalkboard"></i>
+                <span>کلاس‌های من</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>حضور و غیاب</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>تکالیف</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>نمرات و ارزیابی</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-bell"></i>
+                <span>اعلان‌ها</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="../index.html" class="logout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>بازگشت به صفحه اصلی</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-title">
+
+                <h1>پنل استاد</h1>
+
+                <p>
+                    مدیریت کلاس‌ها و فعالیت‌های آموزشی
+                </p>
+
+            </div>
+
+
+            <div class="teacher-profile">
+
+                <div class="teacher-avatar">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                </div>
+
+                <div class="teacher-info">
+
+                    <strong>استاد حنیفه لو</strong>
+
+                    <span>استاد مدرسه</span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- WELCOME -->
+
+        <section class="welcome">
+
+            <div class="welcome-text">
+
+                <h2>
+                    سلام، استاد حنیفه لو 🌷
+                </h2>
+
+                <p>
+                    به پنل مدیریت آموزشی SchoolHub خوش آمدید.
+                    <br>
+                    از این بخش می‌توانید کلاس‌ها، دانش‌آموزان و فعالیت‌های آموزشی خود را مدیریت کنید.
+                </p>
+
+            </div>
+
+
+            <div class="welcome-icon">
+                <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div>
+                    <h3>86</h3>
+                    <p>دانش‌آموزان</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-chalkboard"></i>
+                </div>
+
+                <div>
+                    <h3>2</h3>
+                    <p>کلاس فعال</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-file-lines"></i>
+                </div>
+
+                <div>
+                    <h3>12</h3>
+                    <p>تکلیف فعال</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-bell"></i>
+                </div>
+
+                <div>
+                    <h3>7</h3>
+                    <p>اعلان جدید</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MAIN GRID -->
+
+        <section class="main-grid">
+
+
+            <!-- CLASS SCHEDULE -->
+
+            <div class="box">
+
+                <div class="box-header">
+
+                    <h3>
+                        برنامه کلاس‌ها
+                    </h3>
+
+                    <a href="#">
+                        مشاهده همه
+                    </a>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                        <tr>
+
+                            <th>کلاس</th>
+
+                            <th>درس</th>
+
+                            <th>زمان</th>
+
+                            <th>وضعیت</th>
+
+                        </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                        <!-- CLASS 1 -->
+
+                        <tr>
+
+                            <td>
+                                کاردانی پیوسته
+                            </td>
+
+                            <td>
+                                طراحی وب
+                            </td>
+
+                            <td>
+                                08:00
+                            </td>
+
+                            <td>
+
+                                <span class="status waiting">
+                                    برگزار نشده
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- CLASS 2 -->
+
+                        <tr>
+
+                            <td>
+                                کاردانی
+                            </td>
+
+                            <td>
+                                طراحی وب
+                            </td>
+
+                            <td>
+                                سه‌شنبه، 08:00
+                            </td>
+
+                            <td>
+
+                                <span class="status done">
+                                    برگزار شده
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <div class="box">
+
+                <div class="box-header">
+
+                    <h3>
+                        آخرین اعلان‌ها
+                    </h3>
+
+                    <a href="#">
+                        مشاهده همه
+                    </a>
+
+                </div>
+
+
+                <div class="notification">
+
+                    <div class="notification-icon">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            تکلیف جدید ثبت شد
+                        </h4>
+
+                        <p>
+                            برای کلاس کاردانی پیوسته یک تکلیف جدید ثبت شده است.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification">
+
+                    <div class="notification-icon">
+                        <i class="fa-solid fa-calendar"></i>
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            کلاس طراحی وب
+                        </h4>
+
+                        <p>
+                            کلاس طراحی وب روز سه‌شنبه ساعت ۸ صبح برگزار می‌شود.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification">
+
+                    <div class="notification-icon">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            گزارش حضور و غیاب
+                        </h4>
+
+                        <p>
+                            گزارش حضور و غیاب کلاس‌های برگزار شده آماده است.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK ACCESS -->
+
+        <section class="box" style="margin-top:22px;">
+
+            <div class="box-header">
+
+                <h3>
+                    دسترسی سریع
+                </h3>
+
+            </div>
+
+
+            <div class="quick-access">
+
+                <a href="#" class="quick-card">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <span>
+                        مدیریت دانش‌آموزان
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="quick-card">
+
+                    <i class="fa-solid fa-clipboard-check"></i>
+
+                    <span>
+                        ثبت حضور و غیاب
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="quick-card">
+
+                    <i class="fa-solid fa-file-pen"></i>
+
+                    <span>
+                        ثبت نمرات
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+</body>
+</html>

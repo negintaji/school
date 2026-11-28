@@ -1,0 +1,550 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ورود اساتید | SchoolHub</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Vazirmatn", sans-serif;
+            min-height: 100vh;
+
+            background:
+                radial-gradient(circle at 15% 20%, rgba(216,194,232,.55), transparent 30%),
+                radial-gradient(circle at 85% 80%, rgba(190,211,235,.55), transparent 30%),
+                linear-gradient(135deg, #faf7fc, #f3f5fa);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #493f50;
+            padding: 25px;
+        }
+
+        .login-wrapper {
+            width: min(950px, 100%);
+            min-height: 570px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            background: rgba(255,255,255,.9);
+
+            border: 1px solid #eee7f1;
+            border-radius: 32px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 25px 70px rgba(100,80,120,.13);
+        }
+
+        /* LEFT SIDE */
+
+        .visual {
+            position: relative;
+
+            padding: 45px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #c9afe0 0%,
+                    #aa91c9 52%,
+                    #a9c5e1 100%
+                );
+
+            overflow: hidden;
+        }
+
+        .visual::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,.10);
+
+            top: -150px;
+            right: -100px;
+        }
+
+        .visual::after {
+            content: "";
+
+            position: absolute;
+
+            width: 240px;
+            height: 240px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,.09);
+
+            bottom: -130px;
+            left: -90px;
+        }
+
+        .visual-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        .brand-icon {
+            width: 47px;
+            height: 47px;
+
+            border-radius: 15px;
+
+            background: rgba(255,255,255,.2);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            backdrop-filter: blur(5px);
+        }
+
+        .visual-title {
+            margin-top: 85px;
+        }
+
+        .visual-title h1 {
+            font-size: 30px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .visual-title p {
+            font-size: 13px;
+            line-height: 2.2;
+            opacity: .94;
+        }
+
+        .visual-footer {
+            position: relative;
+            z-index: 2;
+
+            font-size: 11px;
+            opacity: .8;
+        }
+
+        /* RIGHT SIDE */
+
+        .form-area {
+            padding: 55px 48px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-header {
+            margin-bottom: 32px;
+        }
+
+        .form-header .icon {
+            width: 55px;
+            height: 55px;
+
+            border-radius: 17px;
+
+            background: #f0e6f6;
+            color: #8d68a7;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 21px;
+
+            margin-bottom: 18px;
+        }
+
+        .form-header h2 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .form-header p {
+            color: #9b929f;
+            font-size: 12px;
+            line-height: 2;
+        }
+
+        .field {
+            margin-bottom: 19px;
+        }
+
+        .field label {
+            display: block;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            color: #615663;
+
+            margin-bottom: 8px;
+        }
+
+        .input-box {
+            position: relative;
+        }
+
+        .input-box i {
+            position: absolute;
+
+            right: 15px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #a38dab;
+        }
+
+        .input-box input {
+            width: 100%;
+
+            border: 1px solid #e8e1eb;
+
+            background: #fcfbfd;
+
+            border-radius: 14px;
+
+            padding: 14px 43px 14px 14px;
+
+            font-family: inherit;
+            font-size: 12px;
+
+            outline: none;
+
+            transition: .2s;
+        }
+
+        .input-box input:focus {
+            border-color: #b69ac8;
+
+            box-shadow:
+                0 0 0 4px rgba(182,154,200,.12);
+        }
+
+        .options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin: 5px 0 23px;
+
+            font-size: 11px;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+
+            color: #8f8692;
+        }
+
+        .remember input {
+            accent-color: #9674b8;
+        }
+
+        .forgot {
+            color: #8867a2;
+        }
+
+        .login-button {
+            width: 100%;
+
+            border: none;
+
+            border-radius: 14px;
+
+            padding: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #b895cf,
+                    #8f70ae
+                );
+
+            color: white;
+
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 24px rgba(132,99,157,.20);
+
+            transition: .25s;
+        }
+
+        .login-button:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 14px 28px rgba(132,99,157,.25);
+        }
+
+        .back-home {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+
+            margin-top: 20px;
+
+            font-size: 11px;
+            color: #9a909d;
+        }
+
+        .back-home:hover {
+            color: #806193;
+        }
+
+        @media (max-width: 760px) {
+
+            .login-wrapper {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .visual {
+                min-height: 300px;
+                padding: 30px;
+            }
+
+            .visual-title {
+                margin-top: 35px;
+            }
+
+            .visual-title h1 {
+                font-size: 24px;
+            }
+
+            .form-area {
+                padding: 38px 30px;
+            }
+        }
+
+        @media (max-width: 430px) {
+
+            body {
+                padding: 12px;
+            }
+
+            .visual {
+                min-height: 270px;
+            }
+
+            .form-area {
+                padding: 30px 22px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+<div class="login-wrapper">
+
+
+    <!-- VISUAL SIDE -->
+
+    <section class="visual">
+
+        <div class="visual-content">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <span>SchoolHub</span>
+
+            </div>
+
+
+            <div class="visual-title">
+
+                <h1>
+                    پنل اساتید
+                </h1>
+
+                <p>
+                    محیطی ساده و یکپارچه برای مدیریت
+                    کلاس‌ها، دانش‌آموزان و فعالیت‌های آموزشی.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="visual-footer">
+            سامانه مدیریت هوشمند مدرسه
+        </div>
+
+    </section>
+
+
+    <!-- LOGIN FORM -->
+
+    <section class="form-area">
+
+        <div class="form-header">
+
+            <div class="icon">
+                <i class="fa-solid fa-user-tie"></i>
+            </div>
+
+            <h2>
+                ورود استاد
+            </h2>
+
+            <p>
+                برای ورود به پنل آموزشی، اطلاعات حساب خود را وارد کنید.
+            </p>
+
+        </div>
+
+
+        <form action="dashboard.html" method="get">
+
+            <div class="field">
+
+                <label for="username">
+                    نام کاربری یا ایمیل
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="ایمیل یا نام کاربری"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="password">
+                    رمز عبور
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="رمز عبور خود را وارد کنید"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="options">
+
+                <label class="remember">
+
+                    <input type="checkbox">
+
+                    <span>
+                        مرا به خاطر بسپار
+                    </span>
+
+                </label>
+
+
+                <a href="#" class="forgot">
+                    رمز عبور را فراموش کرده‌اید؟
+                </a>
+
+            </div>
+
+
+            <button type="submit" class="login-button">
+                ورود به پنل استاد
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+        </form>
+
+
+        <a href="../index.html" class="back-home">
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+            بازگشت به صفحه اصلی
+
+        </a>
+
+    </section>
+
+</div>
+
+</body>
+</html>
+```
